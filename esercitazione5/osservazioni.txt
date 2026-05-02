@@ -1,0 +1,10 @@
+Facendo i test su vettori molto piccoli (sotto i 100 elementi), ho notato che il "Quick Sort" e il "Merge Sort" (che di solito sono i più veloci) vengono in realtà battuti dall'"Insertion Sort". Questo succede perché gli algoritmi veloci usano la ricorsione (si richiamano continuamente), e fare questo lavoro per ordinare solo 10 o 20 numeri è una perdita di tempo.
+
+
+Visto che l'Insertion Sort è il migliore sui numeri piccoli, ho creato una sorta di versione "ibrida" del Quick Sort: inizia a fare il suo lavoro normale, ma appena si ritrova a dover ordinare una parte di vettore più piccolo di 30 elementi, smette di dividersi e si scambia con l'Insertion Sort. In questo modo prendiamo il meglio di entrambi.
+
+
+Nonostante l'algoritmo ibrido, la funzione "std::sort" già presente nel C++ è comunque più veloce. Questo perché è stata scritta dai creatori del linguaggio usando un algoritmo ancora più complesso e ottimizzato del nostro.
+
+
+Facendo girare il programma in due modalità diverse, ho visto che i tempi cambiano tantissimo. In modalità "Debug", il computer esegue il codice esattamente come lo abbiamo scritto, ed è molto lento. In modalità "Release", il compilatore ottimizza e riorganizza le istruzioni da solo, rendendo tutto molto più veloce senza necessità di intervenire.
